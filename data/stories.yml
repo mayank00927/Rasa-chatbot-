@@ -1,0 +1,149 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: send_email
+#   - action: email_form
+#   - active_loop: email_form
+#   - slot_was_set:
+#     - requested_slot: email_ID
+#   - intent: inform
+#     entities:
+#     - email_ID: mak006.ms@gmail.com
+#   - slot_was_set:
+#     - email_ID: mak006.ms@gmail.com
+#   - action: email_form
+#   - slot_was_set:
+#     - requested_slot: subject
+#   - intent: inform
+#     entities:
+#     - subject: Regarding
+#   - slot_was_set:
+#     - subject: Regarding
+#   - action: email_form
+#   - slot_was_set:
+#     - requested_slot: message
+#   - intent: inform
+#     entities:
+#     - message: body of email
+#   - slot_was_set:
+#     - message: body of email
+#   - action: email_form
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_submit
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: send_email
+#   - action: email_form
+#   - active_loop: email_form
+#   - slot_was_set:
+#     - requested_slot: email_ID
+#   - intent: inform
+#     entities:
+#     - email_ID: mayank0027@gmail.com
+#   - slot_was_set:
+#     - email_ID: mayank0027@gmail.com
+#   - action: email_form
+#   - slot_was_set:
+#     - requested_slot: subject
+#   - intent: inform
+#     entities:
+#     - subject: Regarding
+#   - slot_was_set:
+#     - subject: Regarding
+#   - action: email_form
+#   - slot_was_set:
+#     - requested_slot: message
+#   - intent: inform
+#     entities:
+#     - message: body of email
+#   - slot_was_set:
+#     - message: body of email
+#   - action: email_form
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_submit
+
+# - story: restart
+#   steps:
+#   - intent: restart
+#   - action: action_restart
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: send_email
+#   - action: email_form
+#   - active_loop: email_form
+#   - slot_was_set:
+#     - requested_slot: email_ID
+#   - intent: inform
+#     entities:
+#     - email_ID: mak006.ms@gmail.com
+#   - slot_was_set:
+#     - email_ID: mak006.ms@gmail.com
+#   - action: email_form
+#   - slot_was_set:
+#     - requested_slot: subject
+#   - intent: inform
+#     entities:
+#     - subject: Regarding
+#   - slot_was_set:
+#     - subject: Regarding
+#   - action: email_form
+#   - slot_was_set:
+#     - requested_slot: message
+#   - intent: inform
+#     entities:
+#     - message: body of email
+#   - slot_was_set:
+#     - message: body of email
+#   - action: email_form
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_submit
+#   - intent: restart
+#   - action: action_restart
+
+

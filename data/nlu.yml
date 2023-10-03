@@ -1,0 +1,125 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: send_email
+  examples: |
+    - Send a mail to
+    - I want to send email
+    - please send email
+    - email
+    - send an email
+    - can you send eamil to ashish
+    - can you please send email for me
+    - i want you to send email for me
+- intent: inform
+  examples: |
+    - [jobs.mayank00927@gmail.com](email_ID)
+    - [srivastava.vishesh9@gmail.com](email_ID) and [vishesh.srivastava@dataxl.solutions](email_ID)
+    - my email id  is [ID](email_ID)
+    - [mak006.ms@gmail.com](email_ID)
+    - [mak006@gmail.com](email_ID)
+    - [@gmail.com](email_ID)
+    - [@yahoo.com](email_ID)
+    - Here are my email addresses: [john@example.com](email_ID) and [jane@example.com](email_ID)
+    - My emails are [user1@gmail.com](email_ID) and [user2@dataxl.solutions](email_ID)
+    - [Regarding Job](subject)
+    - [Test email](subject)
+    - [Regarding](subject) my application 
+    - [regarding]{"entity": "subject", "value": "Regarding"}
+    - [regarding]{"entity": "subject", "value": "Regarding"}
+    - [body of email](message)
+    - [email body](message)
+- regex: email_ID
+  examples: |
+    - '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,20}\b'
+    - [^[ A-Za-z0-9_.]*@gmail.com$](email_ID)
+    - [^[ A-Za-z0-9_.]*@dataxl.solutions$](email_ID)
+    - [^[ A-Za-z0-9_.]*@yahoo.com$](email_ID)
+
+- intent: restart
+  examples: |
+    - restart
+    - start again
+    - restart chat
+    - start from begining

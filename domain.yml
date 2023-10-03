@@ -1,0 +1,75 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- inform
+- mood_great
+- mood_unhappy
+- restart
+- send_email
+entities:
+- email_ID
+- message
+- subject
+slots:
+  email_ID:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: email_ID
+      conditions:
+      - active_loop: email_form
+  subject:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: subject
+      conditions:
+      - active_loop: email_form
+  message:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: message
+      conditions:
+      - active_loop: email_form
+responses:
+  utter_greet:
+  - text: Hi there! What can I help you with today?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_email_ID:
+  - text: Sure,please provide email id to which you want to send email!
+  utter_ask_subject:
+  - text: Thanks for providing - {email_ID}, kindly Write subject line for your email.
+  utter_ask_message:
+  - text: Great, Type the message of email body having subject - {subject}.
+actions:
+- action_collect_emails
+- action_submit
+- utter_greet
+- action_restart
+forms:
+  email_form:
+    required_slots:
+    - email_ID
+    - subject
+    - message
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
