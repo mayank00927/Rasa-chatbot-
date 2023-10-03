@@ -29,8 +29,11 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-
-
+- story: user wants to restart
+  steps:
+    - intent: restart
+    - action: action_restart
+    
 # - story: interactive_story_1
 #   steps:
 #   - intent: greet

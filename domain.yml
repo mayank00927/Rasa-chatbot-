@@ -41,7 +41,9 @@ slots:
       - active_loop: email_form
 responses:
   utter_greet:
-  - text: Hi there! What can I help you with today?
+  - text: "Hi, How may I help you?"
+  utter_session_start:
+  - text: "Hi, this is your personal assistant. How may I help you?"
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -60,9 +62,9 @@ responses:
   utter_ask_message:
   - text: Great, Type the message of email body having subject - {subject}.
 actions:
+- action_session_start
 - action_collect_emails
 - action_submit
-- utter_greet
 - action_restart
 forms:
   email_form:
