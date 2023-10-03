@@ -139,6 +139,7 @@ venv.bak/
 /site
 
 # mypy
+.rasa/cache
 .mypy_cache/
 .dmypy.json
 dmypy.json
