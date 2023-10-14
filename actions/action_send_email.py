@@ -19,7 +19,7 @@ class ActionSubmit(Action):
 
     def SendEmail(self,toaddr,subject,message):
         
-        fromaddr = "mak008.ms@gmail.com"
+        fromaddr = "email_address"
 
         # Create an email message
         msg = MIMEText(message)
@@ -31,7 +31,7 @@ class ActionSubmit(Action):
         try:
             with smtplib.SMTP("smtp.gmail.com", 587) as server:
                 server.starttls()
-                server.login(fromaddr, "htnk pwxf eohu jiae")
+                server.login(fromaddr, "password")
                 server.sendmail(fromaddr, toaddr, msg.as_string())
             print("Email sent successfully!")
         except Exception as e:
